@@ -1,0 +1,35 @@
+{
+    "TRELLO_API_KEY": "0b6fd9b0a5d1f7e9c1c07ed433ce661b",
+    "TRELLO_USER_TOKEN": "75b9d85f7c43ce203b7145de197b0d82e86ee3b7f42818736bbf51c88aa318ad",
+    "boards": [ "5373916630fce325161f98f8", "543cb04b222fd09e30766e12" ],
+
+    "slack": {
+        "filter": [
+            {
+                "key": "@blusteinsteven",
+                "channel": "https://hooks.slack.com/services/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"
+            },
+            {
+                "key": "@danielpesis",
+                "channel": "https://hooks.slack.com/services/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"
+            },
+            {
+                "key": "@martinpesis",
+                "channel": "https://hooks.slack.com/services/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"
+            },
+            {
+                "key": "@jesseschor",
+                "channel": "https://hooks.slack.com/services/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"
+            },
+            {
+                "key": "@evanherron",
+                "channel": "https://hooks.slack.com/services/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"
+            }
+        ]
+    },
+
+    "api": {
+        "url": "https://stz-test.herokuapp.com",
+        "port": 3000
+    }
+}

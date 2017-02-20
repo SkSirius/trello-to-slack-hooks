@@ -1,0 +1,69 @@
+var conf = require('./config');
+var slackSvc = require('./slack-service');
+var Trello = require('node-trello');
+var trello = new Trello(conf.TRELLO_API_KEY, conf.TRELLO_USER_TOKEN);
+
+var createWebhooks = function() {
+    var boards = conf.boards;
+    for(var i = 0; i < boards.length; i++) {
+        var query = {
+            callbackURL: conf.api.url + '/trello/webhook',
+            idModel: boards[i]
+        };
+
+        trello.post('/1/webhooks', query, function(err, data) {
+            if(err) console.log(err);
+        });
+    }
+};
+
+var filterMessage = function(slackModel) {
+    var filter = conf.slack.filter;
+    for(var i = 0; i < filter.length; i++) {
+        var item = filter[i];
+        if(slackModel.commentText.indexOf(item.key) !== -1) {
+            slackSvc.sendToSlack(slackModel, item.channel);
+        }
+    }
+
+    return;
+}
+
+var processChange = function(data) {
+    if(!data || !data.model || !data.action) return;
+
+    var model = data.model;
+    var action = data.action;
+
+    console.log(data);
+
+    var slackModel = {
+        boardName: model.name,
+        actionType: action.type,
+        commentText: action.data.text,
+        commentCard: action.data.card,
+        commentBoard: action.data.board,
+        memberName: action.memberCreator ? action.memberCreator.fullName : "",
+        cardUrl: model.shortUrl
+    };
+
+    if(slackModel.actionType === 'commentCard') {
+        filterMessage(slackModel);
+    }
+}
+
+var getBoards = function(callback) {
+    trello.get("/1/tokens/" + conf.TRELLO_USER_TOKEN + "/member", function(err, result) {
+        if(err) console.log('Error!');
+
+        var memberId = result.id
+
+        trello.get('/1/members/' + memberId + '/boards', callback);
+    });
+};
+
+module.exports = {
+    createWebhooks: createWebhooks,
+    processChange: processChange,
+    getBoards: getBoards
+};
