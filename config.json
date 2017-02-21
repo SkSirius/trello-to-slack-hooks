@@ -7,22 +7,27 @@
         "filter": [
             {
                 "key": "@blusteinsteven",
+                "username": "@steven",
                 "channel": "https://hooks.slack.com/services/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"
             },
             {
                 "key": "@danielpesis",
+                "username": "@dlpesis",
                 "channel": "https://hooks.slack.com/services/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"
             },
             {
                 "key": "@martinpesis",
+                "username": "@mpesis",
                 "channel": "https://hooks.slack.com/services/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"
             },
             {
                 "key": "@jesseschor",
+                "username": "@jesse",
                 "channel": "https://hooks.slack.com/services/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"
             },
             {
                 "key": "@evanherron",
+                "username": "@evanherron",
                 "channel": "https://hooks.slack.com/services/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"
             }
         ]
