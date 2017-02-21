@@ -22,7 +22,7 @@ var filterMessage = function(slackModel) {
     for(var i = 0; i < filter.length; i++) {
         var item = filter[i];
         if(slackModel.commentText.indexOf(item.key) !== -1) {
-            slackSvc.sendToSlack(slackModel, item.channel);
+            slackSvc.sendToSlack(slackModel, item.channel, item.key);
         }
     }
 
@@ -31,7 +31,7 @@ var filterMessage = function(slackModel) {
 
 var processChange = function(data) {
     if(!data || !data.model || !data.action) return;
-    
+
     var model = data.model;
     var action = data.action;
 

@@ -7,16 +7,16 @@ var createMessage = function(model) {
     message += 'List: *' + model.commentList.name + '*  \n';
     message += 'Card: *' + model.commentCard.name + '* (Board: *' + model.boardName + '*) \n\n';
     message += model.commentText + '\n\n';
-    message += 'URL: <' + model.cardUrl + '|' + model.cardUrl + '> (@username) \n ---';
+    message += 'URL: <' + model.cardUrl + '|' + model.cardUrl + '> (' + key + ') \n ---';
 
     return message;
 }
 
 module.exports = {
-    sendToSlack: function(model, channel) {
+    sendToSlack: function(model, channel, key) {
         var message = {
             username: 'Trello-Notification-Bot',
-            text: createMessage(model)
+            text: createMessage(model, key)
         };
 
         restler.postJson(channel, message).on('complete', function(data, resp) {
