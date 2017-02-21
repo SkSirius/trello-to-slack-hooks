@@ -2,7 +2,7 @@ var restler = require('restler');
 var conf = require('./config');
 
 
-var createMessage = function(model) {
+var createMessage = function(model, key) {
     var message = ' --- \n By: *' + model.memberName + '* \n';
     message += 'List: *' + model.commentList.name + '*  \n';
     message += 'Card: *' + model.commentCard.name + '* (Board: *' + model.boardName + '*) \n\n';
