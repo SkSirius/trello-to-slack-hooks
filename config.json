@@ -29,7 +29,7 @@
      },
 
      "api": {
-        "url": "https://stz-test.herokuapp.com",
+        "url": "http://slack-trello-stage.herokuapp.com/",
          "port": 3000
      }
 }
