@@ -35,8 +35,6 @@ var processChange = function(data) {
     var model = data.model;
     var action = data.action;
 
-    console.log(data);
-
     var slackModel = {
         boardName: model.name,
         actionType: action.type,

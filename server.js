@@ -14,7 +14,7 @@ app.get('/trello/webhook', function(req, res) {
 });
 
 app.post('/trello/webhook', function(req, res) {
-    console.log("POST", req.body);
+    //console.log("POST", req.body);
 
     trelloSvc.processChange(req.body);
     res.send('Ok');

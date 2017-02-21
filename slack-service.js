@@ -19,7 +19,7 @@ module.exports = {
         };
 
         restler.postJson(channel, message).on('complete', function(data, resp) {
-            console.log("DATA", data);
+            //console.log("DATA", data);
             console.log('RESP', resp.statusCode);
         });
     }
