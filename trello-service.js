@@ -31,7 +31,7 @@ var filterMessage = function(slackModel) {
 
 var processChange = function(data) {
     if(!data || !data.model || !data.action) return;
-
+    
     var model = data.model;
     var action = data.action;
 
@@ -41,8 +41,10 @@ var processChange = function(data) {
         commentText: action.data.text,
         commentCard: action.data.card,
         commentBoard: action.data.board,
+        commentList: action.data.list,
         memberName: action.memberCreator ? action.memberCreator.fullName : "",
-        cardUrl: model.shortUrl
+        cardUrl: model.shortUrl,
+
     };
 
     if(slackModel.actionType === 'commentCard') {

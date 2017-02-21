@@ -3,10 +3,11 @@ var conf = require('./config');
 
 
 var createMessage = function(model) {
-    var message = 'New comment in: ';
-    message += '*' + model.boardName + ' -> ' + model.commentCard.name + '* \n ';
-    message += '*' + model.memberName + '* wrote: *' + model.commentText + '* \n ' ;
-    message += '<' + model.cardUrl + '|Click here> for details';
+    var message = ' --- \n By: *' + model.memberName + '* \n';
+    message += 'List: *' + model.commentList.name + '*  \n';
+    message += 'Card: *' + model.commentCard.name + '(Board: *' + model.boardName + '*) \n\n';
+    message += model.commentText + '\n\n';
+    message += 'URL: <' + model.cardUrl + '|' + model.cardUrl + '> (@dlpesis) \n ---';
 
     return message;
 }
