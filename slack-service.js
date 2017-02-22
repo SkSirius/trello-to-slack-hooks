@@ -3,11 +3,14 @@ var conf = require('./config');
 
 
 var createMessage = function(model, key) {
+    var socialLink = conf.socialLink + '/' + key;
+
+
     var message = ' --- \n By: *' + model.memberName + '* \n';
     message += 'List: *' + model.commentList.name + '*  \n';
     message += 'Card: *' + model.commentCard.name + '* (Board: *' + model.boardName + '*) \n\n';
     message += model.commentText + '\n\n';
-    message += 'URL: <' + model.cardUrl + '|' + model.cardUrl + '> (' + key + ') \n ---';
+    message += 'URL: <' + model.cardUrl + '|' + model.cardUrl + '> (<' + socialLink + '|@' + key + '>) \n ---';
 
     return message;
 }
