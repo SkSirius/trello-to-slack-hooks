@@ -3,7 +3,7 @@ var conf = require('./config');
 
 
 var createMessage = function(model, key) {
-    var socialLink = conf.socialLink + '/' + key;
+    var socialLink = conf.slack.socialLink + '/' + key;
 
 
     var message = ' --- \n By: *' + model.memberName + '* \n';
