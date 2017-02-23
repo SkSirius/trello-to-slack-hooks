@@ -19,12 +19,11 @@ module.exports = {
     sendToSlack: function(model, channel, key) {
         var message = {
             username: 'Trello-Notification-Bot',
-            link_names: 1,
             text: createMessage(model, key)
         };
 
-        restler.postJson(channel, message).on('complete', function(data, resp) {
-            //console.log("DATA", data);
+        restler.postJson(channel, { text: message, link_names: 1 }).on('complete', function(data, resp) {
+            console.log("DATA", data);
             console.log('RESP', resp.statusCode);
         });
     }
