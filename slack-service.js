@@ -10,7 +10,7 @@ var createMessage = function(model, key) {
     message += 'List: *' + model.commentList.name + '*  \n';
     message += 'Card: *' + model.commentCard.name + '* (Board: *' + model.boardName + '*) \n\n';
     message += model.commentText + '\n\n';
-    message += 'URL: <' + model.cardUrl + '|' + model.cardUrl + '> ' + key + '\n ---';
+    message += 'URL: <' + model.cardUrl + '|' + model.cardUrl + '> @' + key + '\n ---';
 
     return message;
 }
@@ -22,7 +22,7 @@ module.exports = {
             text: createMessage(model, key)
         };
 
-        restler.postJson(channel + '?link_names=1', message).on('complete', function(data, resp) {
+        restler.post(channel, { text: message, link_names: 1 }).on('complete', function(data, resp) {
             console.log("DATA", data);
             console.log('RESP', resp.statusCode);
         });
