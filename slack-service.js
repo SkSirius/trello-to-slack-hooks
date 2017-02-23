@@ -10,7 +10,7 @@ var createMessage = function(model, key) {
     message += 'List: *' + model.commentList.name + '*  \n';
     message += 'Card: *' + model.commentCard.name + '* (Board: *' + model.boardName + '*) \n\n';
     message += model.commentText + '\n\n';
-    message += 'URL: <' + model.cardUrl + '|' + model.cardUrl + '> @' + key + '\n ---';
+    message += 'URL: <' + model.cardUrl + '|' + model.cardUrl + '> ' + key + '\n ---';
 
     return message;
 }
