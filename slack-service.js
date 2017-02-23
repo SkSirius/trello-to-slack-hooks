@@ -17,7 +17,7 @@ var createMessage = function(model, key) {
 
 module.exports = {
     sendToSlack: function(model, channel, key) {
-        restler.post(channel, { data: { text: createMessage(model, key), username: 'Trello-Notification-Bot', link_names: 1 } }).on('complete', function(data, resp) {
+        restler.postJson(channel, { text: createMessage(model, key), username: 'Trello-Notification-Bot', link_names: 1 }).on('complete', function(data, resp) {
             console.log("DATA", data);
             console.log('RESP', resp.statusCode);
         });
