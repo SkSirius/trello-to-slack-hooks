@@ -1,7 +1,7 @@
 {
-    "TRELLO_API_KEY": "2f038a581262ff2ad748d42cc86f7579",
-    "TRELLO_USER_TOKEN": "deaa857069a62565c784a36a0b15e0da7e8a807239cfe4ea3d42fec6c48e63e2",
-    "boards": [ "5788e686f619037bb5744497", "57e1ec02356510470f5e43fe", "578e5bb8740c5afcad18b4ac", "586ea734cbf3e931c2a06496", "58322e9db909b791c0fe081e", "57e37a863f3d5c099fadf816", "5788e6769cd22607c82b80c8" ],
+    "TRELLO_API_KEY": "0b6fd9b0a5d1f7e9c1c07ed433ce661b",
+    "TRELLO_USER_TOKEN": "75b9d85f7c43ce203b7145de197b0d82e86ee3b7f42818736bbf51c88aa318ad",
+    "boards": [ "583bcd79e4d19ebdd6f23f72" ],
 
     "slack": {
         "socialLink": "https://socialinkmedia.slack.com/team",
@@ -9,28 +9,28 @@
         "filter": [
             {
                 "key": "@blusteinsteven",
-                "username": "steven",
-                "channel": "https://hooks.slack.com/services/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"
+                "username": "pavlo.sobchuk",
+                "channel": "https://hooks.slack.com/services/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"
             },
             {
                 "key": "@danielpesis",
                 "username": "dlpesis",
-                "channel": "https://hooks.slack.com/services/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"
+                "channel": "https://hooks.slack.com/services/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"
             },
             {
                 "key": "@martinpesis",
                 "username": "mpesis",
-                "channel": "https://hooks.slack.com/services/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"
+                "channel": "https://hooks.slack.com/services/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"
             },
             {
                 "key": "@jesseschor",
                 "username": "jesse",
-                "channel": "https://hooks.slack.com/services/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"
+                "channel": "https://hooks.slack.com/services/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"
             },
             {
                 "key": "@evanherron",
-                "username": "evanherron",
-                "channel": "https://hooks.slack.com/services/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"
+                "username": "pavlo.sobchuk",
+                "channel": "https://hooks.slack.com/services/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"
             }
         ]
     },
