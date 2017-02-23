@@ -22,7 +22,7 @@ module.exports = {
             text: createMessage(model, key)
         };
 
-        restler.postJson(channel, { text: message, link_names: 1 }).on('complete', function(data, resp) {
+        restler.postJson(channel + '?link_names=1', message).on('complete', function(data, resp) {
             console.log("DATA", data);
             console.log('RESP', resp.statusCode);
         });
