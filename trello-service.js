@@ -35,8 +35,6 @@ var processChange = function(data) {
     var model = data.model;
     var action = data.action;
 
-    console.log(action.data.card);
-
     var slackModel = {
         boardName: model.name,
         actionType: action.type,
@@ -45,9 +43,10 @@ var processChange = function(data) {
         commentBoard: action.data.board,
         commentList: action.data.list,
         memberName: action.memberCreator ? action.memberCreator.fullName : "",
-        cardUrl: model.shortUrl,
-
+        cardUrl: "https://trello.com/c/" + action.data.card.shortLink
     };
+
+    trello.get("/1/")
 
     if(slackModel.actionType === 'commentCard') {
         filterMessage(slackModel);
